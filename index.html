@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bella Vista Hotel & Resort — a 4-star coastal retreat with an AI concierge, ocean-view rooms, spa, dining and instant booking.">
+  <meta name="theme-color" content="#12212c">
+  <title>Bella Vista | 4-Star Coastal Hotel & AI Concierge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__media">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80" alt="Bella Vista resort pool at golden hour">
+      </div>
+      <div class="wrap hero__inner">
+        <span class="eyebrow">A 4-Star Coastal Retreat</span>
+        <h1>Stay well. <em>Live beautifully.</em></h1>
+        <p class="lead">Ocean breezes, thoughtful details, and a concierge that never sleeps. Welcome to Bella Vista — where every stay feels like a small escape.</p>
+        <div class="hero-actions">
+          <a href="booking.html" class="btn btn--gold">Book Your Stay <span class="arrow">→</span></a>
+          <a href="rooms.html" class="btn btn--ghost-light">Explore Rooms</a>
+        </div>
+        <div class="hero-note">🤖 &nbsp;Instant confirmations, 24/7 — chat with Bella, our AI concierge.</div>
+      </div>
+    </section>
+
+    <!-- ============ QUICK BOOKING BAR ============ -->
+    <div class="wrap bookbar">
+      <form class="bookbar__card" id="quickBookForm">
+        <div class="field">
+          <label for="q-checkin">Check-in</label>
+          <input type="date" id="q-checkin" name="checkin" required>
+        </div>
+        <div class="field">
+          <label for="q-checkout">Check-out</label>
+          <input type="date" id="q-checkout" name="checkout" required>
+        </div>
+        <div class="field">
+          <label for="q-guests">Guests</label>
+          <select id="q-guests" name="guests">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="q-room">Room type</label>
+          <select id="q-room" name="room">
+            <option value="">Any room</option>
+            <option value="Classic King">Classic King</option>
+            <option value="Ocean View">Ocean View</option>
+            <option value="Garden Suite">Garden Suite</option>
+            <option value="Vista Penthouse">Vista Penthouse</option>
+          </select>
+        </div>
+        <button class="btn btn--ink" type="submit">Check Availability <span class="arrow">→</span></button>
+      </form>
+    </div>
+
+    <!-- ============ VALUE STRIP ============ -->
+    <section class="section--tight" style="padding-top:56px">
+      <div class="wrap">
+        <div class="value-strip reveal">
+          <div class="value-item"><div class="ico">★</div><div><strong>Four-star comfort</strong><small>Recognized service excellence</small></div></div>
+          <div class="value-item"><div class="ico">🤖</div><div><strong>AI concierge, 24/7</strong><small>Instant booking &amp; support</small></div></div>
+          <div class="value-item"><div class="ico">🌊</div><div><strong>Steps from the beach</strong><small>Prime coastal location</small></div></div>
+          <div class="value-item"><div class="ico">✓</div><div><strong>Free cancellation</strong><small>Up to 48h before arrival</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WELCOME ============ -->
+    <section class="section">
+      <div class="wrap split">
+        <div class="split__media reveal">
+          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1400&q=80" alt="Elegant hotel suite with warm lighting">
+        </div>
+        <div class="split__body reveal">
+          <span class="eyebrow">Welcome to Bella Vista</span>
+          <h2 class="section-title">Comfort that feels like coming home.</h2>
+          <p class="lead">Perched above the coastline, our hotel pairs the ease of a seaside escape with the polish of a city stay. Spacious rooms, honestly good food, and a team that remembers your name.</p>
+          <ul class="check-list">
+            <li>84 beautifully appointed rooms &amp; suites, most with ocean views</li>
+            <li>Heated infinity pool, full-service spa, and 24-hour fitness center</li>
+            <li>Terra Restaurant &amp; the Vista Bar — local, seasonal, unpretentious</li>
+            <li>Free Wi-Fi, parking, and a concierge available at any hour</li>
+          </ul>
+          <a href="amenities.html" class="btn btn--ink">Discover Everything <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED ROOMS ============ -->
+    <section class="section section--cream">
+      <div class="wrap">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Rooms &amp; Suites</span>
+          <h2 class="section-title">Find your kind of room.</h2>
+          <p class="lead mx-auto">Each space is designed for rest — soft linens, natural light, and little touches that make a difference.</p>
+        </div>
+        <div class="grid grid--3">
+          <article class="room-card reveal">
+            <div class="room-card__media">
+              <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=80" alt="Classic King room">
+              <span class="room-tag">Most popular</span>
+            </div>
+            <div class="room-card__body">
+              <h3>Classic King</h3>
+              <div class="room-card__meta"><span>👤 2 guests</span><span>🛏️ King bed</span><span>📐 32 m²</span></div>
+              <p>A calm, light-filled retreat with a plush king bed and a rainfall shower.</p>
+              <ul class="room-features"><li>Free Wi-Fi</li><li>Smart TV</li><li>Breakfast included</li></ul>
+              <div class="room-card__foot">
+                <div class="price"><small>From</small><strong>$189 <span>/ night</span></strong></div>
+                <a href="booking.html?room=Classic%20King" class="btn btn--gold btn--sm">Book <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="room-card reveal">
+            <div class="room-card__media">
+              <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=900&q=80" alt="Ocean View room">
+              <span class="room-tag room-tag--gold">Guest favorite</span>
+            </div>
+            <div class="room-card__body">
+              <h3>Ocean View</h3>
+              <div class="room-card__meta"><span>👤 2 guests</span><span>🛏️ King bed</span><span>📐 38 m²</span></div>
+              <p>Wake to the sound of the surf and a private balcony over the bay.</p>
+              <ul class="room-features"><li>Sea-view balcony</li><li>Breakfast included</li><li>Espresso bar</li></ul>
+              <div class="room-card__foot">
+                <div class="price"><small>From</small><strong>$269 <span>/ night</span></strong></div>
+                <a href="booking.html?room=Ocean%20View" class="btn btn--gold btn--sm">Book <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="room-card reveal">
+            <div class="room-card__media">
+              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80" alt="Garden Suite">
+            </div>
+            <div class="room-card__body">
+              <h3>Garden Suite</h3>
+              <div class="room-card__meta"><span>👤 3 guests</span><span>🛏️ King + sofa</span><span>📐 52 m²</span></div>
+              <p>A generous suite with a separate lounge and a quiet garden terrace.</p>
+              <ul class="room-features"><li>Living area</li><li>Soaking tub</li><li>Free Wi-Fi</li></ul>
+              <div class="room-card__foot">
+                <div class="price"><small>From</small><strong>$389 <span>/ night</span></strong></div>
+                <a href="booking.html?room=Garden%20Suite" class="btn btn--gold btn--sm">Book <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="text-center" style="margin-top:38px"><a href="rooms.html" class="btn btn--outline">View All Rooms <span class="arrow">→</span></a></div>
+      </div>
+    </section>
+
+    <!-- ============ AMENITIES PREVIEW ============ -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Everything you need</span>
+          <h2 class="section-title">A little more, everywhere.</h2>
+        </div>
+        <div class="grid grid--4">
+          <div class="amenity-card reveal"><div class="ico">🏊</div><h3>Heated Pool</h3><p>Year-round infinity pool with loungers, cabanas, and poolside service.</p></div>
+          <div class="amenity-card reveal"><div class="ico">💆</div><h3>Spa &amp; Wellness</h3><p>Massages, facials, sauna, and a steam room to help you properly unwind.</p></div>
+          <div class="amenity-card reveal"><div class="ico">🍽️</div><h3>Dining</h3><p>Terra Restaurant and the Vista Bar — seasonal plates and a great glass of wine.</p></div>
+          <div class="amenity-card reveal"><div class="ico">💪</div><h3>Fitness Center</h3><p>Open 24 hours with modern cardio, strength equipment, and yoga mats.</p></div>
+          <div class="amenity-card reveal"><div class="ico">📶</div><h3>Free Wi-Fi</h3><p>Fast, reliable connection across the entire property — including the beach deck.</p></div>
+          <div class="amenity-card reveal"><div class="ico">🚗</div><h3>Parking &amp; EV</h3><p>Complimentary parking and EV charging for every guest, right on site.</p></div>
+          <div class="amenity-card reveal"><div class="ico">🐾</div><h3>Pet-friendly</h3><p>Bring your four-legged friend — select rooms and a whole lot of welcome.</p></div>
+          <div class="amenity-card reveal"><div class="ico">✈️</div><h3>Airport Shuttle</h3><p>Complimentary scheduled transfers to and from the airport, daily.</p></div>
+        </div>
+        <div class="text-center" style="margin-top:38px"><a href="amenities.html" class="btn btn--ink">See All Amenities <span class="arrow">→</span></a></div>
+      </div>
+    </section>
+
+    <!-- ============ DINING TEASER ============ -->
+    <section class="section--tight">
+      <div class="wrap split">
+        <div class="split__body reveal">
+          <span class="eyebrow">Dining at Bella Vista</span>
+          <h2 class="section-title">Good food, no fuss.</h2>
+          <p class="lead">Our kitchen works with local growers and the day's catch. Come for the coastal timeline, stay for the wood-fired everything.</p>
+          <ul class="check-list">
+            <li>Terra Restaurant — breakfast, lunch, and dinner daily</li>
+            <li>The Vista Bar — craft cocktails, small plates, sunset views</li>
+            <li>24-hour room service and private dining on request</li>
+          </ul>
+          <a href="dining.html" class="btn btn--ink">Explore Dining <span class="arrow">→</span></a>
+        </div>
+        <div class="split__media reveal">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80" alt="Warm restaurant interior at Bella Vista">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section section--ink">
+      <div class="wrap">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Guest stories</span>
+          <h2 class="section-title">What our guests say.</h2>
+        </div>
+        <div class="testimonial-slider reveal">
+          <div class="testimonial is-active">
+            <div class="quote-mark">“</div>
+            <blockquote>I booked my room at midnight through the chat and had a confirmation before I'd finished my coffee. The room was lovely, and the staff were even better.</blockquote>
+            <div class="who"><div class="avatar">AM</div><div><strong>Amelia M.</strong><small>Stayed in an Ocean View room · March 2026</small></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="quote-mark">“</div>
+            <blockquote>Perfect location, genuinely comfortable beds, and the spa is worth the trip on its own. Four stars on the sign, five-star feeling in practice.</blockquote>
+            <div class="who"><div class="avatar">JR</div><div><strong>James R.</strong><small>Stayed in the Vista Penthouse · January 2026</small></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="quote-mark">“</div>
+            <blockquote>Asked the AI concierge for a late checkout and a human called me five minutes later. That's the kind of service I'll remember.</blockquote>
+            <div class="who"><div class="avatar">SK</div><div><strong>Sofia K.</strong><small>Stayed in a Garden Suite · February 2026</small></div></div>
+          </div>
+          <div class="slider-dots">
+            <button class="is-active" aria-label="Testimonial 1"></button>
+            <button aria-label="Testimonial 2"></button>
+            <button aria-label="Testimonial 3"></button>
+          </div>
+        </div>
+        <div class="stats" style="margin-top:70px">
+          <div class="stat"><strong>4.8</strong><span>Average guest rating</span></div>
+          <div class="stat"><strong>12k+</strong><span>Guests each year</span></div>
+          <div class="stat"><strong>24/7</strong><span>Concierge availability</span></div>
+          <div class="stat"><strong>98%</strong><span>Would return</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AI CONCIERGE ============ -->
+    <section class="section concierge" id="concierge">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="eyebrow">Meet Bella</span>
+          <h2 class="section-title" style="color:#fff">Your AI concierge. Always on.</h2>
+          <p style="color:rgba(255,255,255,.82);max-width:520px">Book a room, ask about amenities, or reach a real person — all in one conversation. No hold music, no waiting until morning.</p>
+          <div class="feature-line"><span>✓</span> Automated reservations with instant email confirmation</div>
+          <div class="feature-line"><span>✓</span> Remembers your conversation and preferences</div>
+          <div class="feature-line"><span>✓</span> Human support escalation when you need it</div>
+          <button class="btn btn--gold" data-chat-open style="margin-top:18px">Chat with Bella <span class="arrow">→</span></button>
+        </div>
+        <div class="chat-preview reveal">
+          <div class="chat-preview__head">
+            <div class="bot-avatar">B</div>
+            <div><strong>Bella · AI Concierge</strong><small>Online now</small></div>
+          </div>
+          <div class="bubble bubble--bot">Hi! I'm Bella. I can book a room or get you help — what do you need?</div>
+          <div class="bubble bubble--user">I need a room for this weekend</div>
+          <div class="bubble bubble--bot">Of course! What check-in date works for you?</div>
+          <div class="bubble bubble--user">Friday the 13th, two guests</div>
+          <div class="bubble bubble--bot">Done — Ocean View, Fri 13th → Sun 15th. Confirmation email sent! 🎉</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LOCATION / CTA ============ -->
+    <section class="section cta-band">
+      <div class="wrap reveal">
+        <span class="eyebrow eyebrow--center">Vista Bay, California</span>
+        <h2 class="section-title">Fifteen minutes from the airport. A world away from ordinary.</h2>
+        <p>Walk the beach, explore the marina, or just stay put by the pool. We're here when you're ready.</p>
+        <a href="booking.html" class="btn btn--gold">Reserve Your Stay <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/site.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>

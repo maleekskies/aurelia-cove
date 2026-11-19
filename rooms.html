@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the rooms and suites at Bella Vista Hotel — from Classic Kings to the Vista Penthouse.">
+  <meta name="theme-color" content="#12212c">
+  <title>Rooms & Suites | Bella Vista Hotel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__media"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=2000&q=80" alt="Bella Vista suite interior"></div>
+      <div class="wrap">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Rooms &amp; Suites</div>
+        <span class="eyebrow">Rooms &amp; Suites</span>
+        <h1>Space to settle in.</h1>
+        <p>Eighty-four rooms, four distinct styles, and one shared promise: you'll sleep well here.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Choose your view</span>
+          <h2 class="section-title">Rooms made for real rest.</h2>
+          <p class="lead mx-auto">All rates include free Wi-Fi, on-site parking, daily breakfast, and access to the pool, spa, and fitness center.</p>
+        </div>
+
+        <div class="room-choice" id="roomFilter" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:44px">
+          <button class="btn btn--ink btn--sm" data-filter="all">All rooms</button>
+          <button class="btn btn--outline btn--sm" data-filter="king">King</button>
+          <button class="btn btn--outline btn--sm" data-filter="view">Ocean view</button>
+          <button class="btn btn--outline btn--sm" data-filter="suite">Suites</button>
+        </div>
+
+        <div class="grid grid--2" id="roomGrid">
+          <!-- Classic King -->
+          <article class="room-card reveal" data-cat="king">
+            <div class="room-card__media"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=80" alt="Classic King room"><span class="room-tag">Most popular</span></div>
+            <div class="room-card__body">
+              <h3>Classic King</h3>
+              <div class="room-card__meta"><span>👤 2 guests</span><span>🛏️ 1 king bed</span><span>📐 32 m²</span></div>
+              <p>Our welcoming classic — soft linens, a rainfall shower, a small work desk, and enough quiet to make the days feel longer.</p>
+              <ul class="room-features"><li>Free Wi-Fi</li><li>55" Smart TV</li><li>Rainfall shower</li><li>Breakfast included</li></ul>
+              <div class="room-card__foot">
+                <div class="price"><small>From</small><strong>$189 <span>/ night</span></strong></div>
+                <a href="booking.html?room=Classic%20King" class="btn btn--gold btn--sm">Book now <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ocean View -->
+          <article class="room-card reveal" data-cat="view">
+            <div class="room-card__media"><img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=80" alt="Ocean View room"><span class="room-tag room-tag--gold">Guest favorite</span></div>
+            <div class="room-card__body">
+              <h3>Ocean View King</h3>
+              <div class="room-card__meta"><span>👤 2 guests</span><span>🛏️ 1 king bed</span><span>📐 38 m²</span></div>
+              <p>A private balcony, the sound of the surf, and a blackout curtain for slow mornings. This is the room guests come back for.</p>
+              <ul class="room-features"><li>Sea-view balcony</li><li>Espresso bar</li><li>Free Wi-Fi</li><li>Breakfast included</li></ul>
+              <div class="room-card__foot">
+                <div class="price"><small>From</small><strong>$269 <span>/ night</span></strong></div>
+                <a href="booking.html?room=Ocean%20View" class="btn btn--gold btn--sm">Book now <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Garden Suite -->
+          <article class="room-card reveal" data-cat="suite">
+            <div class="room-card__media"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=80" alt="Garden Suite"></div>
+            <div class="room-card__body">
+              <h3>Garden Suite</h3>
+              <div class="room-card__meta"><span>👤 3 guests</span><span>🛏️ King + sofa bed</span><span>📐 52 m²</span></div>
+              <p>A separate living room, a deep soaking tub, and a leafy terrace. Ideal for families or anyone who likes a little extra room.</p>
+              <ul class="room-features"><li>Living area</li><li>Soaking tub</li><li>Garden terrace</li><li>Breakfast included</li></ul>
+              <div class="room-card__foot">
+                <div class="price"><small>From</small><strong>$389 <span>/ night</span></strong></div>
+                <a href="booking.html?room=Garden%20Suite" class="btn btn--gold btn--sm">Book now <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Vista Penthouse -->
+          <article class="room-card reveal" data-cat="suite view">
+            <div class="room-card__media"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1000&q=80" alt="Vista Penthouse"><span class="room-tag room-tag--gold">Signature stay</span></div>
+            <div class="room-card__body">
+              <h3>Vista Penthouse</h3>
+              <div class="room-card__meta"><span>👤 4 guests</span><span>🛏️ 2 bedrooms</span><span>📐 88 m²</span></div>
+              <p>Our top-floor residence: two bedrooms, a full kitchen, a wraparound terrace, and the best sunset view on the property.</p>
+              <ul class="room-features"><li>Two bedrooms</li><li>Full kitchen</li><li>Wraparound terrace</li><li>Butler service</li></ul>
+              <div class="room-card__foot">
+                <div class="price"><small>From</small><strong>$649 <span>/ night</span></strong></div>
+                <a href="booking.html?room=Vista%20Penthouse" class="btn btn--gold btn--sm">Book now <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Coastal Twin -->
+          <article class="room-card reveal" data-cat="king">
+            <div class="room-card__media"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80" alt="Coastal Twin room"></div>
+            <div class="room-card__body">
+              <h3>Coastal Twin</h3>
+              <div class="room-card__meta"><span>👤 2 guests</span><span>🛏️ 2 twin beds</span><span>📐 30 m²</span></div>
+              <p>Bright, practical, and comfortable — perfect for friends or colleagues traveling together.</p>
+              <ul class="room-features"><li>Two twin beds</li><li>Free Wi-Fi</li><li>Work desk</li><li>Breakfast included</li></ul>
+              <div class="room-card__foot">
+                <div class="price"><small>From</small><strong>$179 <span>/ night</span></strong></div>
+                <a href="booking.html?room=Coastal%20Twin" class="btn btn--gold btn--sm">Book now <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Accessible King -->
+          <article class="room-card reveal" data-cat="king">
+            <div class="room-card__media"><img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=1000&q=80" alt="Accessible King room"></div>
+            <div class="room-card__body">
+              <h3>Accessible King</h3>
+              <div class="room-card__meta"><span>👤 2 guests</span><span>🛏️ 1 king bed</span><span>📐 34 m²</span></div>
+              <p>Thoughtfully designed with step-free access, roll-in shower, and all the comfort of our Classic King.</p>
+              <ul class="room-features"><li>Step-free entry</li><li>Roll-in shower</li><li>Visual alerts</li><li>Breakfast included</li></ul>
+              <div class="room-card__foot">
+                <div class="price"><small>From</small><strong>$199 <span>/ night</span></strong></div>
+                <a href="booking.html?room=Accessible%20King" class="btn btn--gold btn--sm">Book now <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p id="noRooms" style="display:none;text-align:center;color:var(--muted);margin-top:30px">No rooms in that category — try another filter.</p>
+      </div>
+    </section>
+
+    <section class="section section--cream">
+      <div class="wrap">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Good to know</span>
+          <h2 class="section-title">Before you arrive.</h2>
+        </div>
+        <div class="grid grid--3">
+          <div class="amenity-card reveal"><div class="ico">🕒</div><h3>Check-in &amp; out</h3><p>Check-in from 3:00 PM, check-out by 11:00 AM. Early arrivals and late departures are always welcome to ask about.</p></div>
+          <div class="amenity-card reveal"><div class="ico">🧹</div><h3>Daily housekeeping</h3><p>Your room is refreshed every day, with fresh linens, towels, and a little something on the pillow.</p></div>
+          <div class="amenity-card reveal"><div class="ico">🐾</div><h3>Bring your pet</h3><p>Pets stay in select rooms for a one-time $35 cleaning fee. Just tell us when you book.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band">
+      <div class="wrap reveal">
+        <h2 class="section-title">Ready to check in?</h2>
+        <p>Book direct for the best rate — and let Bella, our AI concierge, handle the rest.</p>
+        <a href="booking.html" class="btn btn--gold">Book Your Stay <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script>
+    // Room category filter (progressive enhancement — all rooms show without JS).
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll("#roomFilter button");
+      const cards = document.querySelectorAll("#roomGrid .room-card");
+      const empty = document.getElementById("noRooms");
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          buttons.forEach(function (b) { b.className = "btn btn--outline btn--sm"; });
+          btn.className = "btn btn--ink btn--sm";
+          const filter = btn.dataset.filter;
+          let shown = 0;
+          cards.forEach(function (card) {
+            const match = filter === "all" || card.dataset.cat.split(" ").indexOf(filter) !== -1;
+            card.style.display = match ? "" : "none";
+            if (match) shown++;
+          });
+          empty.style.display = shown ? "none" : "block";
+        });
+      });
+    });
+  </script>
+  <script src="js/site.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>

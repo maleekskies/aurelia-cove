@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book your stay at Bella Vista Hotel. Instant confirmation, best direct rate, and 24/7 AI concierge support.">
+  <meta name="theme-color" content="#12212c">
+  <title>Book Your Stay | Bella Vista Hotel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero" style="padding-bottom:64px">
+      <div class="page-hero__media"><img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2000&q=80" alt="Bella Vista hotel exterior"></div>
+      <div class="wrap">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Book your stay</div>
+        <span class="eyebrow">Reservations</span>
+        <h1>Book direct. Settle in.</h1>
+        <p>Best rate guaranteed, free cancellation up to 48 hours before arrival, and instant confirmation.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" style="padding-top:56px">
+      <div class="wrap wizard">
+        <div class="steps" id="steps">
+          <div class="step is-active" data-step="1"><b>1</b><span>Dates &amp; guests</span></div>
+          <div class="step-line"></div>
+          <div class="step" data-step="2"><b>2</b><span>Choose room</span></div>
+          <div class="step-line"></div>
+          <div class="step" data-step="3"><b>3</b><span>Your details</span></div>
+          <div class="step-line"></div>
+          <div class="step" data-step="4"><b>4</b><span>Confirm</span></div>
+        </div>
+
+        <div class="form-card">
+          <!-- STEP 1 -->
+          <div class="wizard-panel is-active" data-step="1">
+            <span class="eyebrow">Step 1 of 4</span>
+            <h2>When are you coming?</h2>
+            <div class="form-row" style="margin-top:22px">
+              <div class="form-group">
+                <label for="checkin">Check-in</label>
+                <input type="date" id="checkin" required>
+                <div class="form-error">Please choose a check-in date.</div>
+              </div>
+              <div class="form-group">
+                <label for="checkout">Check-out</label>
+                <input type="date" id="checkout" required>
+                <div class="form-error">Check-out must be after check-in.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guests">Guests</label>
+                <select id="guests">
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Earliest arrival</label>
+                <input value="3:00 PM" disabled aria-label="Earliest arrival time" style="color:var(--muted)">
+                <div class="form-hint">Late arrivals welcome — we'll hold your room.</div>
+              </div>
+            </div>
+            <div class="wizard-actions">
+              <span></span>
+              <button class="btn btn--gold" id="btnNext1">Continue to rooms <span class="arrow">→</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="wizard-panel" data-step="2">
+            <span class="eyebrow">Step 2 of 4</span>
+            <h2>Choose your room.</h2>
+            <p class="form-hint">Rates are per night and include breakfast, Wi-Fi, and parking.</p>
+            <div class="room-choice" id="roomChoices"></div>
+            <div class="wizard-actions">
+              <button class="btn btn--outline" id="btnBack2">← Back</button>
+              <button class="btn btn--gold" id="btnNext2">Continue <span class="arrow">→</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="wizard-panel" data-step="3">
+            <span class="eyebrow">Step 3 of 4</span>
+            <h2>Who's staying?</h2>
+            <div class="form-row" style="margin-top:22px">
+              <div class="form-group">
+                <label for="guestName">Full name *</label>
+                <input type="text" id="guestName" placeholder="e.g. Alex Morgan" autocomplete="name">
+                <div class="form-error">Please enter your name.</div>
+              </div>
+              <div class="form-group">
+                <label for="guestEmail">Email address *</label>
+                <input type="email" id="guestEmail" placeholder="you@example.com" autocomplete="email">
+                <div class="form-error">Please enter a valid email.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guestPhone">Phone number <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+                <input type="tel" id="guestPhone" placeholder="+1 555 000 0000" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="requests">Special requests <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+                <input type="text" id="requests" placeholder="High floor, late checkout…">
+              </div>
+            </div>
+            <div class="wizard-actions">
+              <button class="btn btn--outline" id="btnBack3">← Back</button>
+              <button class="btn btn--gold" id="btnNext3">Review booking <span class="arrow">→</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="wizard-panel" data-step="4">
+            <span class="eyebrow">Step 4 of 4</span>
+            <h2>Everything look right?</h2>
+            <div class="summary-box" style="margin-top:22px">
+              <h4>Your reservation</h4>
+              <div class="summary-line"><span>Dates</span><span id="sumDates">—</span></div>
+              <div class="summary-line"><span>Duration</span><span id="sumNights">—</span></div>
+              <div class="summary-line"><span>Guests</span><span id="sumGuests">—</span></div>
+              <div class="summary-line"><span>Room</span><span id="sumRoom">—</span></div>
+              <div class="summary-line"><span id="sumBase">—</span><span id="sumBaseVal">—</span></div>
+              <div class="summary-line"><span>Taxes &amp; fees</span><span id="sumTax">—</span></div>
+              <div class="summary-line total"><span>Total</span><span id="sumTotal">—</span></div>
+            </div>
+            <label class="checkbox" style="margin-bottom:18px">
+              <input type="checkbox" id="terms">
+              <span>I agree to the booking terms and cancellation policy (free cancellation up to 48 hours before arrival).</span>
+            </label>
+            <div class="wizard-actions">
+              <button class="btn btn--outline" id="btnBack4">← Back</button>
+              <button class="btn btn--gold" id="btnConfirm">Confirm &amp; book <span class="arrow">→</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 5: CONFIRMATION -->
+          <div class="wizard-panel" data-step="5">
+            <div class="confirm-card">
+              <div class="confirm-icon">✓</div>
+              <h2>You're booked!</h2>
+              <p class="lead mx-auto" id="confirmDetails" style="margin-top:14px"></p>
+              <div class="ref-code" id="confirmRef">BV-XXXXXX</div>
+              <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+                <button class="btn btn--ink" id="addCalendar">📅 Add to calendar</button>
+                <button class="btn btn--outline" data-chat-open>Ask Bella anything</button>
+                <a href="index.html" class="btn btn--outline">Back to home</a>
+              </div>
+              <p class="form-hint" style="margin-top:24px">Need to change something? Reply to your confirmation email or use the AI concierge — we're here 24/7.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/site.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
