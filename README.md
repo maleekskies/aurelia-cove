@@ -21,10 +21,13 @@ Everything runs in the browser with plain HTML, CSS, and JavaScript. No build st
 
 The floating chat widget appears on every page. Out of the box it runs entirely client-side with a small intent/state engine:
 
-- **Automated reservation booking** — collects check-in, check-out, guests, room type, name, and email, then issues a confirmation reference and saves it locally.
-- **Human support escalation** — collects the guest's name and phone number and saves a support request, simulating a notification to the support team.
-- **FAQ answers** — check-in/out times, pricing, amenities, location, cancellation, pets, Wi-Fi, parking.
-- **Persistent memory** — session ID and last booking are stored in `localStorage`, so Aura can greet returning guests.
+- **Reservations** — book, change, or cancel a room with a confirmation reference.
+- **Bookable services** — restaurant tables, spa appointments, airport shuttle, room service, extra towels, wake up calls, maintenance tickets.
+- **Guest information** — check-in/out, pricing, amenities, policies, parking, pets, local attractions, loyalty signup.
+- **General use** — quick maths, unit conversions, time and date, small talk, jokes, coin flips, translations, and a short set of general facts.
+- **Human support escalation** — collects the guest's name and phone number and saves a support request.
+- **Persistent memory** — session ID, last booking, and recent actions are stored in `localStorage`.
+- **Help command** — typing `help` lists every capability. Every action is saved under `ac_actions`.
 
 ### Brand
 
@@ -83,7 +86,8 @@ The widget then `POST`s JSON:
   "sessionId": "sess-xxxx",
   "message": "I'd like a room this weekend",
   "state": "book_checkin",
-  "draft": { "checkin": "2026-12-10" }
+  "draft": { "checkin": "2026-12-10" },
+  "flow": null
 }
 ```
 
