@@ -430,6 +430,10 @@ p { margin: 0 0 1rem; }
 }
 @media (max-width: 560px) {
   .wrap { width: min(calc(100% - 32px), var(--wrap)); }
+  .topbar .wrap { justify-content: center; }
+  .topbar-list:first-child { display: none; }
+  .topbar-list:last-child { gap: 14px; }
+  .topbar-list a { font-size: .7rem; white-space: nowrap; }
   .section { padding: 70px 0; }
   .bookbar__card { grid-template-columns: 1fr; padding: 22px; }
   .grid--4, .value-strip, .stats { grid-template-columns: 1fr; }

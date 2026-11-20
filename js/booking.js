@@ -55,7 +55,7 @@
     }).join("");
   }
 
-  function setStep(n) {
+  function setStep(n, scroll) {
     current = n;
     document.querySelectorAll(".wizard-panel").forEach(function (p) {
       p.classList.toggle("is-active", Number(p.dataset.step) === n);
@@ -66,7 +66,7 @@
       s.classList.toggle("is-done", idx < n);
     });
     if (n === 4) renderSummary();
-    document.querySelector(".wizard").scrollIntoView({ behavior: "smooth", block: "start" });
+    if (scroll !== false) document.querySelector(".wizard").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function fieldValue(id) { return (document.getElementById(id).value || "").trim(); }
@@ -210,7 +210,7 @@
       });
     });
 
-    setStep(1);
+    setStep(1, false);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
