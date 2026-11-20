@@ -1,4 +1,4 @@
-# Bella Vista Hotel & Resort — Website
+# Aurelia Cove Hotel & Resort — Website
 
 A complete, dependency-free website for a fictional 4-star coastal hotel, built around an **AI concierge** that can book reservations and escalate to human support.
 
@@ -13,24 +13,24 @@ Everything runs in the browser with plain HTML, CSS, and JavaScript. No build st
 | `index.html` | Home — hero, quick booking bar, rooms, amenities, dining, testimonials, stats, AI concierge section |
 | `rooms.html` | Six room types with filter chips and direct "Book" links |
 | `amenities.html` | Pool, spa, fitness, parking, EV, shuttle, pet-friendly, meetings & events |
-| `dining.html` | Terra Restaurant, Vista Bar, room service, private dining, sample menu |
+| `dining.html` | Terra Restaurant, Cove Bar, room service, private dining, sample menu |
 | `booking.html` | 4-step reservation wizard with live pricing, validation, confirmation reference and `.ics` calendar download |
 | `contact.html` | Contact form, info, map, callback request, FAQ |
 
-### The AI concierge ("Bella")
+### The AI concierge ("Aura")
 
 The floating chat widget appears on every page. Out of the box it runs entirely client-side with a small intent/state engine:
 
 - **Automated reservation booking** — collects check-in, check-out, guests, room type, name, and email, then issues a confirmation reference and saves it locally.
 - **Human support escalation** — collects the guest's name and phone number and saves a support request, simulating a notification to the support team.
 - **FAQ answers** — check-in/out times, pricing, amenities, location, cancellation, pets, Wi-Fi, parking.
-- **Persistent memory** — session ID and last booking are stored in `localStorage`, so Bella can greet returning guests.
+- **Persistent memory** — session ID and last booking are stored in `localStorage`, so Aura can greet returning guests.
 
 ### Brand
 
-- **Name:** Bella Vista Hotel & Resort
+- **Name:** Aurelia Cove Hotel & Resort
 - **Positioning:** "Four stars, five-star heart"
-- **Location:** 1 Oceanview Terrace, Vista Bay, CA 93101
+- **Location:** 1 Cove Terrace, Aurelia Bay, CA 93101
 - **Palette:** deep ink navy, warm gold, cream, teal
 
 ---
@@ -58,7 +58,7 @@ You can also open `index.html` directly in a browser — Google Fonts and Unspla
 The whole folder is static, so it can be hosted anywhere:
 
 - **GitHub Pages** — push this folder to a repo, then Settings → Pages → Deploy from branch.
-- **Netlify** — drag-and-drop the `bella-vista-hotel` folder onto Netlify Drop.
+- **Netlify** — drag-and-drop the `aurelia-cove` folder onto Netlify Drop.
 - **Vercel** — `npx vercel --prod` from inside the folder.
 - **Cloudflare Pages** — connect the repo, build command empty, output directory `/`.
 - **Any shared hosting / cPanel** — upload the files via FTP into `public_html`.
@@ -72,7 +72,7 @@ No environment variables or server runtime required for the demo version.
 The chat widget is designed with a single integration seam. Before `js/chat.js` loads, set an endpoint:
 
 ```html
-<script>window.BV_CHAT_ENDPOINT = "https://YOUR-N8N-HOST/webhook/bella";</script>
+<script>window.AC_CHAT_ENDPOINT = "https://YOUR-N8N-HOST/webhook/aura";</script>
 <script src="js/chat.js"></script>
 ```
 
@@ -118,7 +118,8 @@ The booking wizard in `js/booking.js` has a similar seam: replace `confirmBookin
 ## File map
 
 ```
-bella-vista-hotel/
+aurelia-cove/
+├── assets/logo.svg     # custom emblem + favicon
 ├── css/styles.css      # all styling and responsive rules
 ├── js/site.js          # shared header/footer, nav, slider, reveals, toast
 ├── js/chat.js          # AI concierge widget + n8n integration seam

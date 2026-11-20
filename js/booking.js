@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Bella Vista — booking wizard
+   Aurelia Cove — booking wizard
    A front-end reservation flow. In production, step 4 would POST to the
    booking API / n8n webhook; for now it produces a local confirmation and
    hands the details to the AI concierge via localStorage.
@@ -11,7 +11,7 @@
     "Classic King":    { price: 189, img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=300&q=80", desc: "2 guests · King bed · 32 m²" },
     "Ocean View":      { price: 269, img: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=300&q=80", desc: "2 guests · Sea-view balcony · 38 m²" },
     "Garden Suite":    { price: 389, img: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=300&q=80", desc: "3 guests · Separate lounge · 52 m²" },
-    "Vista Penthouse": { price: 649, img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=300&q=80", desc: "4 guests · Two bedrooms · 88 m²" },
+    "Aurelia Penthouse": { price: 649, img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=300&q=80", desc: "4 guests · Two bedrooms · 88 m²" },
     "Coastal Twin":    { price: 179, img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=300&q=80", desc: "2 guests · Two twin beds · 30 m²" },
     "Accessible King": { price: 199, img: "https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=300&q=80", desc: "2 guests · Step-free access · 34 m²" },
   };
@@ -79,7 +79,7 @@
     b.parentElement.classList.remove("has-error");
     if (!a.value) { a.parentElement.classList.add("has-error"); ok = false; }
     if (!b.value || nights() === 0) { b.parentElement.classList.add("has-error"); ok = false; }
-    if (!ok) window.BVToast && window.BVToast("Please choose valid check-in and check-out dates.");
+    if (!ok) window.ACToast && window.ACToast("Please choose valid check-in and check-out dates.");
     return ok;
   }
 
@@ -94,7 +94,7 @@
     if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
       email.parentElement.classList.add("has-error"); ok = false;
     }
-    if (!ok) window.BVToast && window.BVToast("Please check your name and email address.");
+    if (!ok) window.ACToast && window.ACToast("Please check your name and email address.");
     return ok;
   }
 
@@ -122,13 +122,13 @@
 
   function confirmBooking() {
     if (!document.getElementById("terms").checked) {
-      window.BVToast && window.BVToast("Please accept the booking terms to continue.");
+      window.ACToast && window.ACToast("Please accept the booking terms to continue.");
       return;
     }
     const ci = fieldValue("checkin"), co = fieldValue("checkout"), n = nights();
     const base = ROOMS[selectedRoom].price * n;
     const tax = Math.round(base * TAX_RATE * 100) / 100;
-    const ref = "BV-" + Math.random().toString(36).slice(2, 8).toUpperCase();
+    const ref = "AC-" + Math.random().toString(36).slice(2, 8).toUpperCase();
     const booking = {
       ref: ref,
       room: selectedRoom,
@@ -143,7 +143,7 @@
       total: base + tax,
       createdAt: new Date().toISOString(),
     };
-    try { localStorage.setItem("bv_last_booking", JSON.stringify(booking)); } catch (e) {}
+    try { localStorage.setItem("ac_last_booking", JSON.stringify(booking)); } catch (e) {}
     window.__bvBooking = booking;
 
     document.getElementById("confirmRef").textContent = ref;
@@ -160,20 +160,20 @@
     const stamp = function (d) { return d.replace(/-/g, ""); };
     const end = new Date(b.checkout + "T11:00:00");
     const ics = [
-      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Bella Vista Hotel//Booking//EN",
-      "BEGIN:VEVENT", "UID:" + b.ref + "@bellavista.hotel",
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Aurelia Cove Hotel//Booking//EN",
+      "BEGIN:VEVENT", "UID:" + b.ref + "@aureliacove.hotel",
       "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z",
       "DTSTART;VALUE=DATE:" + stamp(b.checkin),
       "DTEND;VALUE=DATE:" + stamp(b.checkout),
-      "SUMMARY:Stay at Bella Vista — " + b.room,
+      "SUMMARY:Stay at Aurelia Cove — " + b.room,
       "DESCRIPTION:Confirmation " + b.ref + ". " + b.nights + " nights, " + b.guests + " guests.",
-      "LOCATION:1 Oceanview Terrace, Vista Bay, CA 93101",
+      "LOCATION:1 Cove Terrace, Aurelia Bay, CA 93101",
       "END:VEVENT", "END:VCALENDAR",
     ].join("\r\n");
     const blob = new Blob([ics], { type: "text/calendar" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
-    a.href = url; a.download = "bella-vista-" + b.ref + ".ics";
+    a.href = url; a.download = "aurelia-cove-" + b.ref + ".ics";
     a.click();
     URL.revokeObjectURL(url);
   }

@@ -1,16 +1,16 @@
 /* ==========================================================================
-   Bella Vista Hotel — shared site behaviour
+   Aurelia Cove Hotel — shared site behaviour
    Injects the header/footer so every page stays in sync, plus small UX bits.
    ========================================================================== */
 (function () {
   "use strict";
 
   const BRAND = {
-    name: "Bella Vista",
+    name: "Aurelia Cove",
     tagline: "Hotel & Resort",
     phone: "+1 (805) 555-0147",
-    email: "reservations@bellavista.hotel",
-    address: "1 Oceanview Terrace, Vista Bay, CA 93101",
+    email: "reservations@aureliacove.hotel",
+    address: "1 Cove Terrace, Aurelia Bay, CA 93101",
   };
 
   const NAV = [
@@ -50,7 +50,7 @@
       <div class="wrap">
         <nav class="navbar" aria-label="Main navigation">
           <a href="index.html" class="logo">
-            <span class="logo-mark">BV</span>
+            <img class="logo-mark" src="assets/logo.svg" alt="" width="46" height="46">
             <span class="logo-text"><strong>${BRAND.name}</strong><small>${BRAND.tagline}</small></span>
           </a>
           <ul class="nav-links" id="navLinks">
@@ -73,7 +73,7 @@
         <div class="footer-grid">
           <div>
             <a href="index.html" class="logo">
-              <span class="logo-mark">BV</span>
+              <img class="logo-mark" src="assets/logo.svg" alt="" width="46" height="46">
               <span class="logo-text"><strong>${BRAND.name}</strong><small>${BRAND.tagline}</small></span>
             </a>
             <p style="margin-top:18px;max-width:300px">Where thoughtful comfort meets the coast. Four stars, five-star heart — and an AI concierge available around the clock.</p>
@@ -214,7 +214,7 @@
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const input = form.querySelector("input");
-      window.BVToast && window.BVToast(`Thanks! You're on the list — welcome to ${BRAND.name}.`);
+      window.ACToast && window.ACToast(`Thanks! You're on the list — welcome to ${BRAND.name}.`);
       form.reset();
     });
   }
@@ -236,7 +236,7 @@
     document.addEventListener("click", (e) => {
       if (e.target.closest("[data-chat-open]")) {
         e.preventDefault();
-        window.BVChat && window.BVChat.open();
+        window.ACChat && window.ACChat.open();
       }
     });
   }
@@ -257,7 +257,7 @@
 
   // Global toast helper
   let toastTimer;
-  window.BVToast = function (message) {
+  window.ACToast = function (message) {
     let toast = document.querySelector(".toast");
     if (!toast) {
       toast = document.createElement("div");
@@ -270,7 +270,7 @@
     toastTimer = setTimeout(() => toast.classList.remove("is-show"), 3200);
   };
 
-  window.BVBrand = BRAND;
+  window.ACBrand = BRAND;
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", mount);

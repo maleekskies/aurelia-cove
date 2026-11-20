@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Bella Vista Hotel — Core Stylesheet
+   Aurelia Cove Hotel — Core Stylesheet
    Standalone, dependency-free. Tweak the tokens in :root to rebrand.
    ========================================================================== */
 
@@ -116,11 +116,11 @@ p { margin: 0 0 1rem; }
 .navbar { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .logo { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
 .logo-mark {
-  width: 42px; height: 42px; border: 1.5px solid var(--gold); border-radius: 50%;
-  display: grid; place-items: center; font-family: var(--serif); font-size: 1.02rem; color: #7a5a26;
-  position: relative;
+  width: 46px; height: 46px; flex: 0 0 46px;
+  filter: drop-shadow(0 2px 4px rgba(154,111,46,.18));
+  transition: transform .35s ease;
 }
-.logo-mark::after { content: ""; position: absolute; inset: 3px; border: 1px solid rgba(196,154,82,.35); border-radius: 50%; }
+.logo:hover .logo-mark { transform: rotate(-8deg) scale(1.05); }
 .logo-text strong { display: block; font-family: var(--serif); font-size: 1.22rem; line-height: 1; letter-spacing: .02em; }
 .logo-text small { display: block; font-size: .58rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
 .nav-links { display: flex; align-items: center; gap: 30px; }
@@ -337,7 +337,7 @@ p { margin: 0 0 1rem; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 44px; padding-bottom: 56px; }
 .site-footer .logo-text strong { color: #fff; }
 .site-footer .logo-text small { color: rgba(255,255,255,.75); }
-.site-footer .logo-mark { color: var(--gold-light); border-color: var(--gold-light); }
+.site-footer .logo-mark { filter: drop-shadow(0 2px 8px rgba(0,0,0,.3)); }
 .footer-grid h3 { color: #fff; font-size: 1.02rem; margin-bottom: 20px; font-family: var(--sans); font-weight: 700; letter-spacing: .02em; }
 .footer-grid ul li { margin-bottom: 11px; }
 .footer-grid ul a:hover { color: var(--gold-light); }

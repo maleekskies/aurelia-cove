@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Bella Vista — "Bella" AI Concierge widget
+   Aurelia Cove — "Aura" AI Concierge widget
    --------------------------------------------------------------------------
    Runs fully client-side out of the box (simulated agent) so the site works
    with zero backend. To connect a real n8n / Groq / PostgreSQL stack, set:
 
-       window.BV_CHAT_ENDPOINT = "https://your-n8n.example.com/webhook/bella";
+       window.AC_CHAT_ENDPOINT = "https://your-n8n.example.com/webhook/aura";
 
    before this script loads. The widget will POST { sessionId, message, state }
    and expects JSON back: { reply: "...", quickReplies?: [], action?: "..." }.
@@ -13,8 +13,8 @@
 (function () {
   "use strict";
 
-  const ENDPOINT = window.BV_CHAT_ENDPOINT || "";
-  const STORAGE_KEY = "bv_chat_session";
+  const ENDPOINT = window.AC_CHAT_ENDPOINT || "";
+  const STORAGE_KEY = "ac_chat_session";
 
   // Conversational state machine used by the local demo agent.
   const S = {
@@ -54,11 +54,11 @@
       <button class="chat-fab" id="chatFab" aria-label="Open AI concierge" aria-expanded="false">
         <span>💬</span><span class="badge"></span>
       </button>
-      <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Bella AI concierge" aria-modal="false">
+      <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Aura AI concierge" aria-modal="false">
         <div class="chat-head">
-          <div class="bot-avatar">B</div>
+          <div class="bot-avatar">A</div>
           <div>
-            <strong>Bella · AI Concierge</strong>
+            <strong>Aura · AI Concierge</strong>
             <small>Online — replies instantly</small>
           </div>
           <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
@@ -166,7 +166,7 @@
     const lastBooking = readLastBooking();
     const intro = lastBooking
       ? `Welcome back! I see your last stay with us was a ${lastBooking.room}. Need anything for that trip, or planning another getaway?`
-      : "Hi there! I'm Bella, your AI concierge at Bella Vista. I can book a room, answer questions, or get a human from our team to help. What can I do for you?";
+      : "Hi there! I'm Aura, your AI concierge at Aurelia Cove. I can book a room, answer questions, or get a human from our team to help. What can I do for you?";
     setTimeout(() => botSay(intro, ["🛎️ Book a room", "What amenities do you have?", "🔔 Talk to a human"], 350), 700);
   }
 
@@ -223,16 +223,16 @@
   }
 
   function finishBooking() {
-    const ref = "BV-" + Math.random().toString(36).slice(2, 7).toUpperCase();
+    const ref = "AC-" + Math.random().toString(36).slice(2, 7).toUpperCase();
     const booking = { ...draft, ref, createdAt: new Date().toISOString() };
-    try { localStorage.setItem("bv_last_booking", JSON.stringify(booking)); } catch (e) {}
+    try { localStorage.setItem("ac_last_booking", JSON.stringify(booking)); } catch (e) {}
     state = S.BOOK_DONE;
     botSay(`All set, ${draft.name}! I've reserved your ${draft.room} from ${draft.checkin} to ${draft.checkout} for ${draft.guests} guest(s). A confirmation email is on its way to ${draft.email}. Your reference is ${ref}. Is there anything else?`, ["🔔 Talk to a human", "What amenities do you have?"]);
   }
 
   function finishEscalation() {
     state = S.ESCALATE_DONE;
-    try { localStorage.setItem("bv_support_request", JSON.stringify(draft)); } catch (e) {}
+    try { localStorage.setItem("ac_support_request", JSON.stringify(draft)); } catch (e) {}
     botSay(`Thanks, ${draft.name}. I've notified our support team and they'll call you at ${draft.phone} shortly. You can also reach us anytime at (805) 555-0147. Anything else I can help with?`, ["🛎️ Book a room"]);
   }
 
@@ -251,7 +251,7 @@
       case S.BOOK_GUESTS:
         draft.guests = text;
         state = S.BOOK_ROOM;
-        botSay("Lovely. Which room type interests you — Classic King, Ocean View, Garden Suite, or the Vista Penthouse?", ["Classic King", "Ocean View", "Garden Suite", "Vista Penthouse"]);
+        botSay("Lovely. Which room type interests you — Classic King, Ocean View, Garden Suite, or the Aurelia Penthouse?", ["Classic King", "Ocean View", "Garden Suite", "Aurelia Penthouse"]);
         break;
       case S.BOOK_ROOM:
         draft.room = text;
@@ -300,10 +300,10 @@
         botSay("Our rooms start at $189 per night for a Classic King, with Ocean View rooms from $269 and Suites from $389. Rates include Wi-Fi, parking, and breakfast. Shall I check availability?", ["🛎️ Book a room", "🔔 Talk to a human"]);
         break;
       case "amenities":
-        botSay("We have a heated pool, full-service spa, fitness center, free Wi-Fi & parking, Terra Restaurant, the Vista Bar, pet-friendly rooms, EV charging, and an airport shuttle. Want me to book a room or get a human for details?", ["🛎️ Book a room", "🔔 Talk to a human"]);
+        botSay("We have a heated pool, full-service spa, fitness center, free Wi-Fi & parking, Terra Restaurant, the Cove Bar, pet-friendly rooms, EV charging, and an airport shuttle. Want me to book a room or get a human for details?", ["🛎️ Book a room", "🔔 Talk to a human"]);
         break;
       case "location":
-        botSay("We're at 1 Oceanview Terrace, Vista Bay, CA 93101 — a 15-minute drive from the airport and steps from the beach. Would you like directions from a team member?", ["🔔 Talk to a human"]);
+        botSay("We're at 1 Cove Terrace, Aurelia Bay, CA 93101 — a 15-minute drive from the airport and steps from the beach. Would you like directions from a team member?", ["🔔 Talk to a human"]);
         break;
       case "cancel":
         botSay("I can help with that. Most rates allow free cancellation up to 48 hours before arrival. For a specific booking, let me connect you with our team.", ["🔔 Talk to a human"]);
@@ -317,7 +317,7 @@
   }
 
   function readLastBooking() {
-    try { return JSON.parse(localStorage.getItem("bv_last_booking") || "null"); } catch (e) { return null; }
+    try { return JSON.parse(localStorage.getItem("ac_last_booking") || "null"); } catch (e) { return null; }
   }
 
   /* -------------------- Send pipeline -------------------- */
@@ -359,7 +359,7 @@
     }, 420);
   }
 
-  window.BVChat = { open, close, send, get state() { return state; } };
+  window.ACChat = { open, close, send, get state() { return state; } };
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", mount);
